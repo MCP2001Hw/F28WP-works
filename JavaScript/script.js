@@ -1,29 +1,50 @@
-let head = document.getElementById("head");
+//Button Display
+
+const showButton = document.getElementById('showButton');
+const hiddenText = document.getElementById('hiddenText');
+
+showButton.addEventListener('click', function () {
+  hiddenText.style.display = 'block'; 
+  showButton.style.display = 'none'; 
+  imgStatus.style.display = 'none';
+});
+
+
+//Flashing Button
+
+let head = document.getElementById("hiddenText");
 let myArray = ["Red", "Orange", "Yellow", "Green", "Cyan", "Blue", "Purple"];
-let intervalId; 
-let isChanging = false; 
+let intervalId;
+let isDisplay = false;
 
 function changeColor() {
-  if (!isChanging) {
-    isChanging = true;
+  if (!isDisplay) {
+    isDisplay = true;
 
     let i = 0;
 
     intervalId = setInterval(function () {
       head.style.color = myArray[i];
       i = (i + 1) % myArray.length;
-    }
-    ,200);
+    }, 200);
   } else {
-    isChanging = false;
+    isDisplay = false;
     clearInterval(intervalId);
-    head.style.color = "black"
   }
 }
 
+function displayTextAndChangeColor() {
+  changeColor();
+}
 
-let btns = document.getElementById("buttons");
+displayTextAndChangeColor();
+
+
+let btns = document.getElementById("showButton");
 btns.addEventListener("click", changeColor);
+
+
+//Cookie banner
 
 document.body.style.height = '200pt';
 
@@ -39,7 +60,23 @@ document.head.appendChild(script);
 script.onload = function()
 {
   console.log('loaded script');
-
-  // console.log( initCookieConsent );
 }
 console.log('ready');
+
+//SweetAlert
+
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
+
+script.onload = function() {
+  // SweetAlert2 library is loaded, you can use it here
+  Swal.fire({
+    title: 'Congratulations!!!',
+    text: 'You just won a IPhone 15 for FREE!!!',
+    icon: 'success',
+    confirmButtonText: 'OK'
+  });
+};
+
+document.head.appendChild(script);
