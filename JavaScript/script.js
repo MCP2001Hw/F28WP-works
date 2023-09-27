@@ -1,5 +1,5 @@
 let head = document.getElementById("head");
-myArray = ["White", "Black"]
+myArray = ["Red", "Green"]
 i = 0;
 
 function changeColor(event) {
