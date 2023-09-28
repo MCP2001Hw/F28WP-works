@@ -6,7 +6,6 @@ const hiddenText = document.getElementById('hiddenText');
 showButton.addEventListener('click', function () {
   hiddenText.style.display = 'block'; 
   showButton.style.display = 'none'; 
-  imgStatus.style.display = 'none';
 });
 
 
@@ -39,11 +38,6 @@ function displayTextAndChangeColor() {
 
 displayTextAndChangeColor();
 
-
-let btns = document.getElementById("showButton");
-btns.addEventListener("click", changeColor);
-
-
 //Cookie banner
 
 document.body.style.height = '200pt';
@@ -57,12 +51,6 @@ script['data-position'] = 'top';
 script['data-message']  = 'We use cookies!';
 document.head.appendChild(script); 
 
-script.onload = function()
-{
-  console.log('loaded script');
-}
-console.log('ready');
-
 //SweetAlert
 
 var script = document.createElement('script');
@@ -73,7 +61,7 @@ script.onload = function() {
   // SweetAlert2 library is loaded, you can use it here
   Swal.fire({
     title: 'Congratulations!!!',
-    text: 'You just won a IPhone 15 for FREE!!!',
+    text: 'You just won a iPhone 15 for FREE!!!',
     icon: 'success',
     confirmButtonText: 'OK'
   });
