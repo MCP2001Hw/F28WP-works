@@ -50,6 +50,11 @@ script['data-height']   = '20px';
 script['data-position'] = 'top';
 script['data-message']  = 'We use cookies!';
 document.head.appendChild(script); 
+script.onload = function()
+{
+  console.log('loaded CB');
+}
+console.log('CB ready');
 
 //SweetAlert
 
@@ -58,13 +63,46 @@ script.type = 'text/javascript';
 script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
 
 script.onload = function() {
-  // SweetAlert2 library is loaded, you can use it here
   Swal.fire({
     title: 'Congratulations!!!',
     text: 'You just won a iPhone 15 for FREE!!!',
     icon: 'success',
-    confirmButtonText: 'OK'
+    confirmButtonText: 'Comfirm'
   });
+
+  console.log('loaded SA2');
 };
 
+console.log('SA2 ready');
+
 document.head.appendChild(script);
+
+//Tailwind
+
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = "https://cdn.tailwindcss.com";
+
+script.onload = function() {
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          clifford: '#da373d',
+        }
+      }
+    }
+  }
+
+  console.log('loaded TW');
+};
+
+console.log('TW ready');
+
+document.head.appendChild(script);
+
+$(document).ready(function(){ 
+  $("button").click(function(){ 
+      $("#divContent").load("https://api.github.com/repositories/2126244/commits?per_page=1"); 
+  }); 
+}); 
