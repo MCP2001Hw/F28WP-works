@@ -1,14 +1,8 @@
-$(document).ready(function(){
-  // when ready, grab the html 
-  getContents();
-});
-
-function getContents(){
-  $.ajax({
-      url: 'https://f28wp.github.io/',
-      success: function(data) {
-         console.log(data);
-          $('#data').html( data );
-      }
-  });
+async function fetchAndParseXML() {
+  let prom = await fetch( 'https://moxie.foxnews.com/google-publisher/latest.xml' );
+  let text = await prom.text();
+  
+  console.log( text.substring(0, 100 ) );
 }
+
+fetchAndParseXML();
