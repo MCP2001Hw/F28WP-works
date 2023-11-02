@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>jQuery Textarea Example</title>
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
-</head>
-<body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="JavaScript/script.js"></script>
-</body>
-</html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="CSS/style.css">
+
+            <title>
+                Local Storage Test
+            </title>
+        </head>
+
+        <body>
+            <h1>
+                Local Storage Test
+            </h1>
+
+            <label for="data-input">
+                Enter Data:
+            </label>
+    
+            <input type="text" id="data-input">
+    
+            <button onclick="saveData()">
+                Save Data
+            </button>
+    
+            <button onclick="clearData()">
+                Clear Data
+            </button>
+    
+            <div id="data-output">
+        
+            </div>
+
+            <script src="JavaScript/script.js"></script>
+        </body>
+    </html>
