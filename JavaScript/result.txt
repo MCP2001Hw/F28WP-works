@@ -1,0 +1,2 @@
+Random number: 4
+The number is even.
